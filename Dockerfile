@@ -51,10 +51,3 @@ RUN cpanm -n App::DuckPAN
 
 # Install DDG
 RUN duckpan DDG
-
-# Dokku/Buildstep Stuff
-RUN mkdir /build
-ADD ./stack/ /build
-RUN LC_ALL=C /build/prepare
-RUN rm -rf /var/lib/apt/lists/*
-RUN apt-get clean
